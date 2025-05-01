@@ -61,9 +61,9 @@ const Hero = () => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skill', label: 'Skills' },
+    { id: '/about', label: 'About' },
+    { id: '/projects', label: 'Projects' },
+    { id: '/skill', label: 'Skills' },
     { id: 'contact', label: 'Contact' },
   ];
 
