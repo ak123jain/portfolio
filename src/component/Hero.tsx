@@ -150,7 +150,9 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navbarRef = useRef(null);
+
+  // ✅ Correctly typed ref
+  const navbarRef = useRef<HTMLDivElement | null>(null);
 
   const [skillIndex, setSkillIndex] = useState(0);
   const skills = ['Frontend Developer', 'Backend Developer', 'React Specialist'];
@@ -174,7 +176,8 @@ const Hero = () => {
     };
   }, []);
 
-  const handleMouseMove = (e) => {
+  // ✅ Proper typing for MouseEvent
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!navbarRef.current || window.innerWidth < 1024) return;
 
     const { clientX } = e;
@@ -269,7 +272,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Background lines */}
+      {/* Background Grid */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 h-full w-full">
           {Array.from({ length: 12 }).map((_, i) => (
@@ -291,15 +294,14 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Main content */}
+      {/* Main Section */}
       <div className="relative z-10 flex min-h-screen">
-        {/* Left */}
+        {/* Left Column */}
         <div
           className={`w-1/3 bg-gray-50 border-r border-gray-200 flex flex-col justify-center px-8 transition-all duration-1000 ${
             isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
           }`}
         >
-          {/* Profile image */}
           <div className="mb-8">
             <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg">
               <img src={akash} alt="Akash Jain" className="w-full h-full object-cover" />
@@ -308,7 +310,6 @@ const Hero = () => {
 
           <h1 className="text-4xl font-bold mb-4 text-gray-900">Akash Jain</h1>
 
-          {/* Typing effect */}
           <div className="h-8 mb-6 overflow-hidden relative">
             {skills.map((skill, index) => (
               <p
@@ -330,7 +331,6 @@ const Hero = () => {
             Crafting elegant, high-performance web experiences with modern technologies.
           </p>
 
-          {/* Socials */}
           <div className="flex space-x-4 mt-8">
             <a
               href="https://github.com/ak123jain"
@@ -357,7 +357,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right */}
+        {/* Right Column */}
         <div
           className={`w-2/3 flex flex-col justify-center items-start px-16 transition-all duration-1000 ${
             isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
@@ -387,7 +387,7 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Resume Button */}
+            {/* Resume Download */}
             <div className="mt-12">
               <a
                 href={resume}
