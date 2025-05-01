@@ -20,7 +20,7 @@ const Project = () => {
       title: "Resume-Sudhar",
       description: "Resume - Sudhar is a full-stack web application that empowers users to build professional, job-winning resumes with smart AI enhancements and real-time ATS optimization. It combines sleek design with robust features to help users stand out in competitive job markets.",
       image: resume,
-      technologies: ["React", "Redux", "Node.js", "MongoDB"],
+      technologies: ["React", "Razorpay", "Node.js", "MongoDB" , "Express" , "Tailwind CSS"],
       liveLink: "https://example.com/tasks",
       codeLink: "https://github.com/ak123jain/resume-sudhar-front"
     },
@@ -29,7 +29,7 @@ const Project = () => {
       title: "Reffral-jugaad",
       description: " Referral Jugaad – A platform that connects job seekers with employees offering verified company referrals, streamlining the referral request and tracking process.",
       image:  jugaad,
-      technologies: ["React", "D3.js", "Express", "MongoDB"],
+      technologies: ["React", "Node.js", "Express", "MongoDB" , "Tailwind CSS"],
       liveLink: "https://reffral-juggad-frontend-dqrn.vercel.app/",
       codeLink: "https://github.com/ak123jain/Reffral-juggad-frontend"
     },
@@ -38,7 +38,7 @@ const Project = () => {
       title: "Green-basket",
       description: "🥦 Green Basket – An eco-conscious online grocery platform offering fresh produce with a seamless shopping experience, real-time cart updates, and responsive UI.",
       image:  geen,
-      technologies: ["React", "Node.js", "MongoDB", "Google Maps API"],
+      technologies: ["React", "Node.js", "MongoDB", "Context api" , "Express.js"],
       liveLink: "https://green-basket2.vercel.app/",
       codeLink: "https://github.com/ak123jain/Green-Basket2"
     }
