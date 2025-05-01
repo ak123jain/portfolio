@@ -2,6 +2,7 @@
 
 
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import {
   ChevronRight,
   Menu,
@@ -64,7 +65,7 @@ const Hero = () => {
     { id: '/about', label: 'About' },
     { id: '/projects', label: 'Projects' },
     { id: '/skill', label: 'Skills' },
-    { id: 'contact', label: 'Contact' },
+    { id: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -81,21 +82,37 @@ const Hero = () => {
       >
         <div className="hidden lg:flex items-center px-6 py-3 bg-white rounded-full shadow-lg border border-gray-100">
           {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`${item.id}`}
-              className={`relative px-5 py-2 text-sm font-medium ${
-                activeSection === item.id
-                  ? 'text-blue-600'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-              onClick={() => setActiveSection(item.id)}
-            >
-              {item.label}
-              {activeSection === item.id && (
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 rounded-full"></span>
-              )}
-            </a>
+            // <a
+            //   key={item.id}
+            //   href={`${item.id}`}
+            //   className={`relative px-5 py-2 text-sm font-medium ${
+            //     activeSection === item.id
+            //       ? 'text-blue-600'
+            //       : 'text-gray-600 hover:text-gray-900'
+            //   }`}
+            //   onClick={() => setActiveSection(item.id)}
+            // >
+            //   {item.label}
+            //   {activeSection === item.id && (
+            //     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 rounded-full"></span>
+            //   )}
+            // </a>
+            <Link
+            key={item.id}
+            to={`${item.id}`}
+            className={`relative px-5 py-2 text-sm font-medium ${
+              activeSection === item.id
+                ? 'text-blue-600'
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+            onClick={() => setActiveSection(item.id)}
+          >
+            {item.label}
+            {activeSection === item.id && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 rounded-full"></span>
+            )}
+          </Link>
+          
           ))}
           <a
             href="#contact"
