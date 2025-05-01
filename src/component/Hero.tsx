@@ -133,7 +133,7 @@
 
 
 import  { useState, useEffect, useRef } from 'react';
-import { ChevronRight, Menu, X, Github, Linkedin, Mail, FileText, ArrowDown } from 'lucide-react';
+import { ChevronRight, Menu, X, Github, Linkedin, Mail, FileText } from 'lucide-react';
 import akash from '../assets/akash-Photoroom.png';
 import resume from '../assets/akash3resume.pdf';
 
@@ -176,7 +176,7 @@ const Hero = () => {
   }, [scrolled, skills.length]);
 
   // Floating navbar with mouse follow effect
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e:any) => {
     if (!navbarRef.current || window.innerWidth < 1024) return;
     
     const { clientX } = e;
@@ -203,7 +203,7 @@ const Hero = () => {
   return (
     <div 
       className="relative min-h-screen bg-white text-gray-800 font-sans overflow-hidden"
-      onMouseMove={handleMouseMove}
+      onMouseMove={handleMouseMove }
     >
       {/* Floating Navbar */}
       <div 
