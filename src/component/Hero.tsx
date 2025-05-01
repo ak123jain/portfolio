@@ -132,7 +132,7 @@
 // export default Hero;
 
 
-import React, { useState, useEffect, useRef } from 'react';
+import  { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Menu, X, Github, Linkedin, Mail, FileText, ArrowDown } from 'lucide-react';
 import akash from '../assets/akash-Photoroom.png';
 import resume from '../assets/akash3resume.pdf';
