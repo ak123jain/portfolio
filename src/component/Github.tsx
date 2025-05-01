@@ -1,6 +1,13 @@
-import   { useState } from 'react';
+import { useState } from 'react';
 
-const  Github = () => {
+// Define types for contributions data
+type Contributions = {
+  [year: string]: {
+    [month: string]: number[]; // Array of contribution levels (0-4)
+  };
+};
+
+const Github = () => {
   // Years to display
   const years = ['2025', '2024', '2023', '2022', '2021'];
   
@@ -8,21 +15,19 @@ const  Github = () => {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   
   // Function to generate random contribution data
-  const generateRandomContributions = () => {
-    const contributions = {};
+  const generateRandomContributions = (): Contributions => {
+    const contributions: Contributions = {};
     
-    years.forEach(year => {
+    years.forEach((year) => {
       contributions[year] = {};
       
-      months.forEach(month => {
+      months.forEach((month) => {
         contributions[year][month] = [];
         // Each month has around 4-5 weeks
         for (let week = 0; week < 5; week++) {
           // Each week has 7 days
           for (let day = 0; day < 7; day++) {
             // Random contribution level (0-4)
-            // 0: No contribution
-            // 1-4: Different levels of contribution
             const level = Math.floor(Math.random() * 5);
             contributions[year][month].push(level);
           }
@@ -38,7 +43,7 @@ const  Github = () => {
   const [totalContributions] = useState(Math.floor(Math.random() * 1000) + 500);
   
   // Function to get color class based on contribution level
-  const getColorClass = (level) => {
+  const getColorClass = (level: number): string => {
     switch (level) {
       case 0:
         return 'bg-gray-800';
