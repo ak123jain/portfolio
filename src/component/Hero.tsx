@@ -126,7 +126,7 @@ const Hero = () => {
           {navItems.map((item) => (
             <a
               key={item.id}
-              href={`#${item.id}`}
+              href={`${item.id}`}
               className={`text-xl font-medium ${
                 activeSection === item.id ? 'text-blue-600' : 'text-gray-800'
               }`}
