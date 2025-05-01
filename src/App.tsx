@@ -2,6 +2,7 @@
 import Home from "./Pages/Home"
 import Second from "./component/Second"
 import Project from "./component/Project"
+import { Contact } from "lucide-react"
  
  
  const App = () => {
@@ -11,7 +12,7 @@ import Project from "./component/Project"
           <Route path="/" element={<Home />} />
           <Route path="/skill" element={<Second />} />
           <Route path="/projects" element={<Project />} />
-          <Route path="/contact" element={<h1>Contact</h1>} />
+          <Route path="/contact" element={<Contact />} />
        </Routes>
      </div>
    )
