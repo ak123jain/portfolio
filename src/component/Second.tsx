@@ -210,8 +210,7 @@
 // export default Second;
 
 
-import React from 'react';
-import { BookOpen, Code, Server, Database, Briefcase, Award } from 'lucide-react';
+ import { BookOpen, Code, Server, Database, Briefcase, Award } from 'lucide-react';
 
 const Second = () => {
   return (
