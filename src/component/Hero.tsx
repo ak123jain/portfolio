@@ -114,12 +114,13 @@ const Hero = () => {
           </Link>
           
           ))}
-          <a
-            href="#contact"
+           
+           <Link
+            to="/contact"
             className="ml-4 px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800"
-          >
-            Let's Talk
-          </a>
+           >
+           Let's Talk
+           </Link>
         </div>
       </div>
 
