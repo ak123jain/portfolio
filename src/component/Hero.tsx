@@ -132,8 +132,16 @@
 // export default Hero;
 
 
-import  { useState, useEffect, useRef } from 'react';
-import { ChevronRight, Menu, X, Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import {
+  ChevronRight,
+  Menu,
+  X,
+  Github,
+  Linkedin,
+  Mail,
+  FileText,
+} from 'lucide-react';
 import akash from '../assets/akash-Photoroom.png';
 import resume from '../assets/akash3resume.pdf';
 
@@ -144,82 +152,71 @@ const Hero = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navbarRef = useRef(null);
 
-  // Animated typing effect for skills
   const [skillIndex, setSkillIndex] = useState(0);
-  const skills = ['Frontend Developer', 'Backend developer', 'React Specialist'];
+  const skills = ['Frontend Developer', 'Backend Developer', 'React Specialist'];
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+      setScrolled(window.scrollY > 10);
     };
 
-    document.addEventListener('scroll', handleScroll);
-    
-    // Animation on load
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
+    window.addEventListener('scroll', handleScroll);
 
-    // Skill typing animation
+    const visibilityTimer = setTimeout(() => setIsVisible(true), 100);
     const skillTimer = setInterval(() => {
       setSkillIndex((prevIndex) => (prevIndex + 1) % skills.length);
     }, 3000);
-    
+
     return () => {
-      document.removeEventListener('scroll', handleScroll);
-      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(visibilityTimer);
       clearInterval(skillTimer);
     };
-  }, [scrolled, skills.length]);
+  }, []);
 
-  // Floating navbar with mouse follow effect
-  const handleMouseMove = (e:any) => {
+  const handleMouseMove = (e) => {
     if (!navbarRef.current || window.innerWidth < 1024) return;
-    
+
     const { clientX } = e;
-    const navbarWidth = navbarRef.current.offsetWidth;
     const windowWidth = window.innerWidth;
-    const maxOffset = 40; // Max pixels navbar can move
-    
-    // Calculate movement percentage based on mouse position
-    const mousePercentage = (clientX / windowWidth) * 2 - 1; // -1 to 1 range
+    const maxOffset = 40;
+
+    const mousePercentage = (clientX / windowWidth) * 2 - 1;
     const offset = mousePercentage * maxOffset;
-    
-    // Apply smooth transform
+
     navbarRef.current.style.transform = `translateX(${offset}px)`;
   };
 
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: '/projects', label: 'Projects' },
-    { id: '/skill', label: 'Skills' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'projects', label: 'Projects' },
+    { id: 'skill', label: 'Skills' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   return (
-    <div 
+    <div
       className="relative min-h-screen bg-white text-gray-800 font-sans overflow-hidden"
-      onMouseMove={handleMouseMove }
+      onMouseMove={handleMouseMove}
     >
       {/* Floating Navbar */}
-      <div 
+      <div
         ref={navbarRef}
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-opacity duration-500 ${
           scrolled ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <div className="hidden lg:flex items-center px-6 py-3 bg-white rounded-full shadow-lg border border-gray-100 transition-all duration-300">
+        <div className="hidden lg:flex items-center px-6 py-3 bg-white rounded-full shadow-lg border border-gray-100">
           {navItems.map((item) => (
             <a
               key={item.id}
-              href={`${item.id}`}
+              href={`#${item.id}`}
               className={`relative px-5 py-2 text-sm font-medium ${
-                activeSection === item.id ? 'text-blue-600' : 'text-gray-600 hover:text-gray-900'
-              } transition-colors duration-300`}
+                activeSection === item.id
+                  ? 'text-blue-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
               onClick={() => setActiveSection(item.id)}
             >
               {item.label}
@@ -230,7 +227,7 @@ const Hero = () => {
           ))}
           <a
             href="#contact"
-            className="ml-4 px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors duration-300"
+            className="ml-4 px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800"
           >
             Let's Talk
           </a>
@@ -272,81 +269,60 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Background pattern lines with improved visibility */}
+      {/* Background lines */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 h-full w-full">
-          {/* Vertical lines */}
           {Array.from({ length: 12 }).map((_, i) => (
-            <div 
-              key={`v-${i}`} 
+            <div
+              key={`v-${i}`}
               className="border-l border-gray-200 h-full"
-              style={{ opacity: i % 2 === 0 ? 0.8 : 0.4 }} // Alternating opacity for better visibility
-            ></div>
+              style={{ opacity: i % 2 === 0 ? 0.8 : 0.4 }}
+            />
           ))}
         </div>
         <div className="grid grid-rows-12 h-full w-full">
-          {/* Horizontal lines with improved visibility */}
           {Array.from({ length: 12 }).map((_, i) => (
-            <div 
-              key={`h-${i}`} 
+            <div
+              key={`h-${i}`}
               className="border-t border-gray-200 w-full"
-              style={{ opacity: i % 2 === 0 ? 0.8 : 0.4 }} // Alternating opacity for better visibility
-            ></div>
+              style={{ opacity: i % 2 === 0 ? 0.8 : 0.4 }}
+            />
           ))}
         </div>
       </div>
 
-      {/* Left section */}
+      {/* Main content */}
       <div className="relative z-10 flex min-h-screen">
-        <div 
-          className={`w-1/3 bg-gray-50 border-r border-gray-200 flex flex-col justify-center px-8 transition-all duration-1000 transform ${
-            isVisible ? 'translate-x-0' : '-translate-x-full opacity-0'
+        {/* Left */}
+        <div
+          className={`w-1/3 bg-gray-50 border-r border-gray-200 flex flex-col justify-center px-8 transition-all duration-1000 ${
+            isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
           }`}
         >
-          {/* Animated dots decoration */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="animate-float absolute top-24 left-24 w-6 h-6 rounded-full bg-gray-200 opacity-30"></div>
-            <div className="animate-float animation-delay-1000 absolute top-1/3 left-12 w-8 h-8 rounded-full bg-gray-200 opacity-40"></div>
-            <div className="animate-float animation-delay-2000 absolute bottom-1/4 left-16 w-5 h-5 rounded-full bg-gray-200 opacity-30"></div>
+          {/* Profile image */}
+          <div className="mb-8">
+            <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg">
+              <img src={akash} alt="Akash Jain" className="w-full h-full object-cover" />
+            </div>
           </div>
 
-          {/* Profile image without animated border */}
-<div className="mb-8 relative">
-  <div className="relative group">
-    {/* Removed the blur background */}
-    <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg relative z-10">
-      <img 
-        src={akash} 
-        alt="Akash Jain" 
-        className="w-full h-full object-cover"
-      />
-    </div>
-  </div>
-</div>
+          <h1 className="text-4xl font-bold mb-4 text-gray-900">Akash Jain</h1>
 
-
-
-          {/* Name with animated underline */}
-          <h1 className="text-4xl font-bold mb-4 text-gray-900 relative">
-            Akash Jain
-             
-          </h1>
-
-          {/* Animated typing effect for skills */}
-          <div className="h-8 mb-6 overflow-hidden">
-            <div className="relative">
-              {skills.map((skill, index) => (
-                <p 
-                  key={index}
-                  className={`text-xl text-gray-700 absolute transition-all duration-500 ${
-                    skillIndex === index ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-4'
-                  }`}
-                >
-                  {skill}
-                </p>
-              ))}
-              <span className="absolute right-0 h-full w-1 bg-gray-400 animate-blink"></span>
-            </div>
+          {/* Typing effect */}
+          <div className="h-8 mb-6 overflow-hidden relative">
+            {skills.map((skill, index) => (
+              <p
+                key={index}
+                className={`text-xl text-gray-700 absolute transition-all duration-500 ${
+                  skillIndex === index
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 -translate-y-4'
+                }`}
+              >
+                {skill}
+              </p>
+            ))}
+            <span className="absolute right-0 top-0 h-full w-1 bg-gray-400 animate-blink"></span>
           </div>
 
           <div className="w-16 h-1 bg-gray-900 mb-6"></div>
@@ -354,75 +330,76 @@ const Hero = () => {
             Crafting elegant, high-performance web experiences with modern technologies.
           </p>
 
-          {/* Animated social links */}
+          {/* Socials */}
           <div className="flex space-x-4 mt-8">
-            <a 
-              href="https://github.com/ak123jain" 
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110"
+            <a
+              href="https://github.com/ak123jain"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 hover:scale-110 transition-all"
             >
               <Github size={20} />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/akash-jain-6164a324b/" 
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110"
+            <a
+              href="https://www.linkedin.com/in/akash-jain-6164a324b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 hover:scale-110 transition-all"
             >
               <Linkedin size={20} />
             </a>
-            <a 
-              href="#" 
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110"
+            <a
+              href="mailto:akash@example.com"
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 hover:scale-110 transition-all"
             >
               <Mail size={20} />
             </a>
           </div>
         </div>
 
-        {/* Right section with staggered animation */}
-        <div 
-          className={`w-2/3 flex flex-col justify-center items-start px-16 transition-all duration-1000 transform ${
+        {/* Right */}
+        <div
+          className={`w-2/3 flex flex-col justify-center items-start px-16 transition-all duration-1000 ${
             isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
           }`}
         >
           <div className="max-w-xl">
-            <h2 className={`text-3xl font-bold text-gray-800 mb-6 transition-all duration-500 delay-300 transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}>
-              Experience & Expertise
-            </h2>
-            
-            <div className={`mb-8 transition-all duration-500 delay-500 transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}>
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">Experience & Expertise</h2>
+
+            <div className="mb-8">
               <h3 className="text-xl font-semibold text-gray-800 mb-3">React Development</h3>
-              <p className="text-gray-600">Building modern, responsive web applications with React and Next.js. Focused on performance optimization and clean component architecture.</p>
-            </div>
-            
-            <div className={`mb-8 transition-all duration-500 delay-700 transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">UI/UX Design</h3>
-              <p className="text-gray-600">Creating intuitive, user-centered designs that balance aesthetic appeal with functional usability. Experienced with design systems and component libraries.</p>
-            </div>
-            
-            <div className={`mb-8 transition-all duration-500 delay-900 transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Frontend Architecture</h3>
-              <p className="text-gray-600">Developing scalable frontend architectures with modern tooling, state management patterns, and performance best practices.</p>
+              <p className="text-gray-600">
+                Building modern, responsive web applications with React and Next.js. Focused on performance optimization and clean component architecture.
+              </p>
             </div>
 
-            {/* Animated download button */}
-            <div className={`mt-12 transition-all duration-500 delay-1100 transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}>
-              <button className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white bg-gray-900 rounded overflow-hidden shadow-lg transition-all duration-300 hover:bg-gray-800">
-                <span className="absolute inset-0 w-0 bg-gray-800 transition-all duration-700 ease-out group-hover:w-full"></span>
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">UI/UX Design</h3>
+              <p className="text-gray-600">
+                Creating intuitive, user-centered designs that balance aesthetic appeal with functional usability.
+              </p>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">Frontend Architecture</h3>
+              <p className="text-gray-600">
+                Developing scalable frontend architectures with modern tooling, state management, and performance best practices.
+              </p>
+            </div>
+
+            {/* Resume Button */}
+            <div className="mt-12">
+              <a
+                href={resume}
+                download
+                className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white bg-gray-900 rounded shadow-lg transition-all hover:bg-gray-800"
+              >
                 <span className="relative z-10 flex items-center">
                   <FileText size={18} className="mr-2" />
-                  <a href={resume}><span className="mr-2">Download Resume</span></a>
-                  <ChevronRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  <span className="mr-2">Download Resume</span>
+                  <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
