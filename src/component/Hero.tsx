@@ -65,7 +65,7 @@ const Hero = () => {
     { id: '/about', label: 'About' },
     { id: '/projects', label: 'Projects' },
     { id: '/skill', label: 'Skills' },
-    { id: '/contact', label: 'Contact' },
+    { id: '/conttact', label: 'Contact' },
   ];
 
   return (

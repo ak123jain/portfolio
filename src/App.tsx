@@ -2,7 +2,8 @@
 import Home from "./Pages/Home"
 import Second from "./component/Second"
 import Project from "./component/Project"
-import { Contact } from "lucide-react"
+import Contact from "./Pages/Contact"
+ 
  
  
  const App = () => {
