@@ -187,7 +187,7 @@ const Project = () => {
         {/* Enhanced Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+            <span className="bg-clip-text text-transparent bg-black">
               Innovative Projects
             </span>
           </h2>
