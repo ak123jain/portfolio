@@ -17,7 +17,7 @@ const Project = () => {
         "A collaborative platform that connects people to exchange skills through video lectures and live streaming. Share what you know, learn what you don't.",
       image: skill,
       technologies: ["React", "Node.js", "MongoDB", "Express"],
-      liveLink: "https://skill-swap-sooty.vercel.app/",
+      liveLink: "https://skill.itsakash.site/",
       codeLink: "https://github.com/ak123jain/Skill-Swap-bg",
     },
     {
@@ -27,7 +27,7 @@ const Project = () => {
         "A full-stack application with AI enhancements for creating professional, ATS-optimized resumes. Stand out in competitive job markets with smart resume building.",
       image: resume,
       technologies: ["React", "Razorpay", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
-      liveLink: "https://resume-sudhar-front.vercel.app/",
+      liveLink: "https://resume.itsakash.site/",
       codeLink: "https://github.com/ak123jain/resume-sudhar-front",
     },
     {
@@ -37,7 +37,7 @@ const Project = () => {
         "A platform connecting job seekers with employees offering verified company referrals, streamlining the referral request and tracking process.",
       image: jugaad,
       technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-      liveLink: "https://reffral-juggad-frontend-dqrn.vercel.app/",
+      liveLink: "https://refrral.itsakash.site/",
       codeLink: "https://github.com/ak123jain/Reffral-juggad-frontend",
     },
     {
@@ -47,7 +47,7 @@ const Project = () => {
         "An eco-conscious online grocery platform offering fresh produce with a seamless shopping experience, real-time cart updates, and responsive UI.",
       image: geen,
       technologies: ["React", "Node.js", "MongoDB", "Context API", "Express.js"],
-      liveLink: "https://green-basket2.vercel.app/",
+      liveLink: "https://green.itsakash.site/",
       codeLink: "https://github.com/ak123jain/Green-Basket2",
     },
   ];
