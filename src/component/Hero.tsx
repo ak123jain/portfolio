@@ -292,15 +292,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10 hidden md:block">
-        <div className="flex flex-col items-center">
-          <span className="text-sm text-gray-500 mb-2">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center items-start p-1">
-            <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-scrollDown"></div>
-          </div>
-        </div>
-      </div>
+       
 
       {/* Footer */}
       <div className="absolute bottom-0 w-full py-4 text-center text-gray-500 text-sm border-t border-gray-200 bg-white">
