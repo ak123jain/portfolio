@@ -578,10 +578,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="absolute bottom-0 w-full py-4 px-4 text-center text-gray-500 text-xs sm:text-sm border-t border-gray-200 bg-white">
-        © {new Date().getFullYear()} Akash Jain. All rights reserved.
-      </div>
+       
     </div>
   );
 };
