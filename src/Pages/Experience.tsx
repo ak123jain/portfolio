@@ -22,7 +22,8 @@ const InSriLogo = () => (
 );
 
 const Experience = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  // Fix: Type as number | null instead of just null
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const experiences = [
     {
