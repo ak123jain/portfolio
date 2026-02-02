@@ -1,10 +1,10 @@
-import { BookOpen, Code, Server,  Award, Check } from 'lucide-react';
+import { BookOpen, Code, Server, Award, Check } from 'lucide-react';
 import { useState } from 'react';
 
 const Second = () => {
   // State for subtle hover animations
   const [hoveredSection, setHoveredSection] = useState<any>(null);
-  
+
   // Technology logos using inline SVGs for better control
   const logos = {
     react: (
@@ -60,7 +60,7 @@ const Second = () => {
   };
 
   // Section style with hover effect
-  const sectionStyle = (id:any) => 
+  const sectionStyle = (id: any) =>
     `mb-16 rounded-lg p-6 transition-all duration-300 ${hoveredSection === id ? 'bg-gray-50 shadow-md' : ''}`;
 
   return (
@@ -85,7 +85,7 @@ const Second = () => {
         </div>
 
         {/* Education Section */}
-        <div 
+        <div
           className={sectionStyle('education')}
           onMouseEnter={() => setHoveredSection('education')}
           onMouseLeave={() => setHoveredSection(null)}
@@ -94,7 +94,7 @@ const Second = () => {
             <BookOpen className="mr-3 text-blue-600" size={24} />
             Education
           </h3>
-          
+
           <div className="space-y-8">
             <div className="flex flex-col md:flex-row border-b border-gray-200 pb-6">
               <div className="md:w-1/4">
@@ -108,7 +108,7 @@ const Second = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="flex flex-col md:flex-row">
               <div className="md:w-1/4">
                 <span className="text-gray-500 font-medium">2022</span>
@@ -125,7 +125,7 @@ const Second = () => {
         </div>
 
         {/* Technical Skills */}
-        <div 
+        <div
           className={sectionStyle('skills')}
           onMouseEnter={() => setHoveredSection('skills')}
           onMouseLeave={() => setHoveredSection(null)}
@@ -134,7 +134,7 @@ const Second = () => {
             <Code className="mr-3 text-blue-600" size={24} />
             Technical Expertise
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             {/* Frontend */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
@@ -163,7 +163,7 @@ const Second = () => {
                 </li>
               </ul>
             </div>
-            
+
             {/* Backend */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h4 className="font-bold text-gray-800 mb-4 flex items-center">
@@ -191,7 +191,7 @@ const Second = () => {
                 </li>
               </ul>
             </div>
-            
+
             {/* Database */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h4 className="font-bold text-gray-800 mb-4 flex items-center">
@@ -215,7 +215,7 @@ const Second = () => {
                 </li>
               </ul>
             </div>
-            
+
             {/* Tools */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h4 className="font-bold text-gray-800 mb-4 flex items-center">
@@ -245,9 +245,9 @@ const Second = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Technology Stack */}
-        <div 
+        <div
           className={sectionStyle('stack')}
           onMouseEnter={() => setHoveredSection('stack')}
           onMouseLeave={() => setHoveredSection(null)}
@@ -256,7 +256,7 @@ const Second = () => {
             <Server className="mr-3 text-blue-600" size={24} />
             Technology Stack
           </h3>
-          
+
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {/* Technology logos with labels */}
             <div className="flex flex-col items-center">
@@ -321,33 +321,33 @@ const Second = () => {
             </div>
           </div>
         </div>
-         
 
-         {/* Certifications */}
-<div 
-  className={sectionStyle('certifications')}
-  onMouseEnter={() => setHoveredSection('certifications')}
-  onMouseLeave={() => setHoveredSection(null)}
->
-  <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-    <Award className="mr-3 text-blue-600" size={24} />
-    Certifications
-  </h3>
-  
-  <div className="relative border-l-2 border-gray-300 pl-6 ml-3">
-    <div className="relative">
-      <div className="absolute -left-8 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
-      <div className="flex items-center mb-2">
-        <h4 className="font-bold text-gray-800 text-xl">Deloitte - React Developer</h4>
-        <div className="ml-4 px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">2024</div>
+
+        {/* Certifications */}
+        <div
+          className={sectionStyle('certifications')}
+          onMouseEnter={() => setHoveredSection('certifications')}
+          onMouseLeave={() => setHoveredSection(null)}
+        >
+          <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <Award className="mr-3 text-blue-600" size={24} />
+            Certifications
+          </h3>
+
+          <div className="relative border-l-2 border-gray-300 pl-6 ml-3">
+            <div className="relative">
+              <div className="absolute -left-8 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
+              <div className="flex items-center mb-2">
+                <h4 className="font-bold text-gray-800 text-xl">Deloitte - React Developer</h4>
+                <div className="ml-4 px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">2024</div>
+              </div>
+              <p className="text-gray-700">
+                Professional certification validating expertise in React development best practices and modern front-end architecture.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p className="text-gray-700">
-        Professional certification validating expertise in React development best practices and modern front-end architecture.
-      </p>
-    </div>
-  </div>
-</div>
-</div>
 
 
     </div>
