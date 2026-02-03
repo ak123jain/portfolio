@@ -61,8 +61,8 @@ const Hero = () => {
   { id: 'home', label: 'Home' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'skill', label: 'Skills' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'skill', label: 'Skills' }
+  
 ];
 
 
