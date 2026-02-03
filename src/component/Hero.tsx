@@ -57,13 +57,14 @@ const Hero = () => {
     navbarRef.current.style.transform = `translateX(calc(-50% + ${offset}px))`;
   };
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: '/about', label: 'About' },
-    { id: '/projects', label: 'Projects' },
-    { id: '/skill', label: 'Skills' },
-    { id: '/contact', label: 'Contact' },
-  ];
+   const navItems = [
+  { id: 'home', label: 'Home' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'skill', label: 'Skills' },
+  { id: 'contact', label: 'Contact' },
+];
+
 
   return (
     <div
@@ -79,23 +80,28 @@ const Hero = () => {
         style={{ transform: 'translateX(-50%)' }}
       >
         <div className="hidden lg:flex items-center px-6 py-3 bg-white rounded-full shadow-lg border border-gray-100 whitespace-nowrap">
-          {navItems.map((item) => (
-            <Link
-              key={item.id}
-              to={item.id}
-              className={`relative px-5 py-2 text-sm font-medium transition-colors ${
-                activeSection === item.id
-                  ? 'text-blue-600'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-              onClick={() => setActiveSection(item.id)}
-            >
-              {item.label}
-              {activeSection === item.id && (
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-blue-600 rounded-full"></span>
-              )}
-            </Link>
-          ))}
+           {navItems.map((item) => (
+  <button
+    key={item.id}
+    onClick={() => {
+      const section = document.getElementById(item.id);
+      section?.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(item.id);
+    }}
+    className={`relative px-5 py-2 text-sm font-medium transition-colors ${
+      activeSection === item.id
+        ? "text-blue-600"
+        : "text-gray-600 hover:text-gray-900"
+    }`}
+  >
+    {item.label}
+
+    {activeSection === item.id && (
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-blue-600 rounded-full"></span>
+    )}
+  </button>
+))}
+
 
           <Link
             to="/contact"

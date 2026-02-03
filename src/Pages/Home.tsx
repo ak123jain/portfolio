@@ -8,13 +8,27 @@ import Experience from './Experience'
 
 const Home = () => {
   return (
-    <div>
+     <div>
+      <section id="home">
         <Hero />
+      </section>
+
+      <section id="experience">
         <Experience />
+      </section>
+
+      <section id="skill">
         <Second />
+      </section>
+
+      <section id="projects">
         <Project />
+      </section>
+
+      <section id="contact">
         <Github />
-      </div>
+      </section>
+    </div>
   )
 }
 
