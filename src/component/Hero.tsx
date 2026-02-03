@@ -53,7 +53,8 @@ const Hero = () => {
     const mousePercentage = (clientX / windowWidth) * 2 - 1;
     const offset = mousePercentage * maxOffset;
 
-    navbarRef.current.style.transform = `translateX(${offset}px)`;
+    // Apply transform that keeps the navbar centered while adding the offset
+    navbarRef.current.style.transform = `translateX(calc(-50% + ${offset}px))`;
   };
 
   const navItems = [
@@ -72,9 +73,10 @@ const Hero = () => {
       {/* Fixed Navbar */}
       <div
         ref={navbarRef}
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+        className={`fixed top-6 left-1/2 z-50 transition-all duration-500 ${
           scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
         }`}
+        style={{ transform: 'translateX(-50%)' }}
       >
         <div className="hidden lg:flex items-center px-6 py-3 bg-white rounded-full shadow-lg border border-gray-100 whitespace-nowrap">
           {navItems.map((item) => (
