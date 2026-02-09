@@ -4,6 +4,7 @@ import Hero from '../component/Hero'
 import Project from '../component/Project'
 import Second from '../component/Second'
 import Experience from './Experience'
+import EmailerShowcase from '../component/EmailerShowcase'
  
 
 const Home = () => {
@@ -23,6 +24,10 @@ const Home = () => {
 
       <section id="projects">
         <Project />
+      </section>
+
+      <section id="emailers">
+        <EmailerShowcase />
       </section>
 
       <section id="contact">

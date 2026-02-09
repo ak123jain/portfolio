@@ -1,11 +1,9 @@
-import { Code, ExternalLink, ArrowRight, Star, Mail } from 'lucide-react';
+import { Code, ExternalLink, ArrowRight, Star } from 'lucide-react';
 // Import your landing page screenshots
 import skillSwapLanding from '../assets/skill-swap.jpg';
 import resumeSudharLanding from '../assets/resume-suhar.jpg';
 import referralJugaadLanding from '../assets/reffral.jpg';
 import greenBasketLanding from '../assets/Green (2).png';
-// Placeholder emailer preview (replace with your own image file if you have one)
-import emailerPreview from '../assets/Green (2).png';
 
 // IMPORT YOUR LOGO IMAGES HERE:
 import skillSwapLogo from '../assets/skill-swap.jpg'; // Add your SkillSwap logo image
@@ -87,22 +85,6 @@ const Project = () => {
       liveLink: "https://green.itsakash.site/",
       codeLink: "https://github.com/ak123jain/Green-Basket2",
       stats: { views: 1900, likes: 253 },
-    },
-    {
-      id: 5,
-      title: "Production Emailers",
-      description: "Set of responsive HTML emailers (transactional & marketing) used in production for real users.",
-      logo: (
-        <div className="w-full h-full flex items-center justify-center rounded-lg bg-gray-900 text-white text-xs font-semibold">
-          <Mail className="w-4 h-4 mr-1" />
-          Emailers
-        </div>
-      ),
-      landingImage: emailerPreview,
-      technologies: ["HTML", "Tailwind-like utilities", "MJML-style patterns", "Email client testing"],
-      liveLink: "mailto:aj9882854@gmail.com",
-      codeLink: "https://github.com/ak123jain",
-      stats: { views: 1200, likes: 98 },
     },
   ];
 
@@ -217,15 +199,17 @@ const Project = () => {
 
                         {/* Action Buttons - Desktop */}
                         <div className="hidden md:flex items-center gap-2">
-                          <a
-                            href={project.liveLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="action-btn flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg text-sm font-medium shadow-sm"
-                          >
-                            <ExternalLink size={14} />
-                            Live
-                          </a>
+                          {project.liveLink && (
+                            <a
+                              href={project.liveLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="action-btn flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg text-sm font-medium shadow-sm"
+                            >
+                              <ExternalLink size={14} />
+                              Live
+                            </a>
+                          )}
                           <a
                             href={project.codeLink}
                             target="_blank"
@@ -270,15 +254,17 @@ const Project = () => {
 
                         {/* Mobile Action Buttons */}
                         <div className="flex md:hidden items-center gap-2">
-                          <a
-                            href={project.liveLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="action-btn flex items-center justify-center gap-1 px-3 py-1.5 bg-gray-900 text-white hover:bg-gray-800 rounded-lg text-xs font-medium"
-                          >
-                            <ExternalLink size={12} />
-                            Live
-                          </a>
+                          {project.liveLink && (
+                            <a
+                              href={project.liveLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="action-btn flex items-center justify-center gap-1 px-3 py-1.5 bg-gray-900 text-white hover:bg-gray-800 rounded-lg text-xs font-medium"
+                            >
+                              <ExternalLink size={12} />
+                              Live
+                            </a>
+                          )}
                           <a
                             href={project.codeLink}
                             target="_blank"
@@ -299,7 +285,7 @@ const Project = () => {
                   <div className="relative bg-gray-50 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-48 md:h-full">
                     <img
                       src={project.landingImage}
-                      alt={`${project.title} landing page`}
+                      alt={`${project.title} preview`}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
