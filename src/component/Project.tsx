@@ -1,9 +1,11 @@
-import { Code, ExternalLink, ArrowRight, Star } from 'lucide-react';
+import { Code, ExternalLink, ArrowRight, Star, Mail } from 'lucide-react';
 // Import your landing page screenshots
 import skillSwapLanding from '../assets/skill-swap.jpg';
 import resumeSudharLanding from '../assets/resume-suhar.jpg';
 import referralJugaadLanding from '../assets/reffral.jpg';
 import greenBasketLanding from '../assets/Green (2).png';
+// Placeholder emailer preview (replace with your own image file if you have one)
+import emailerPreview from '../assets/Green (2).png';
 
 // IMPORT YOUR LOGO IMAGES HERE:
 import skillSwapLogo from '../assets/skill-swap.jpg'; // Add your SkillSwap logo image
@@ -85,6 +87,22 @@ const Project = () => {
       liveLink: "https://green.itsakash.site/",
       codeLink: "https://github.com/ak123jain/Green-Basket2",
       stats: { views: 1900, likes: 253 },
+    },
+    {
+      id: 5,
+      title: "Production Emailers",
+      description: "Set of responsive HTML emailers (transactional & marketing) used in production for real users.",
+      logo: (
+        <div className="w-full h-full flex items-center justify-center rounded-lg bg-gray-900 text-white text-xs font-semibold">
+          <Mail className="w-4 h-4 mr-1" />
+          Emailers
+        </div>
+      ),
+      landingImage: emailerPreview,
+      technologies: ["HTML", "Tailwind-like utilities", "MJML-style patterns", "Email client testing"],
+      liveLink: "mailto:aj9882854@gmail.com",
+      codeLink: "https://github.com/ak123jain",
+      stats: { views: 1200, likes: 98 },
     },
   ];
 

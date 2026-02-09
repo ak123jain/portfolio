@@ -23,7 +23,11 @@ const Hero = () => {
 
   const navbarRef = useRef<HTMLDivElement>(null);
   const [skillIndex, setSkillIndex] = useState(0);
-  const skills = ['Frontend Developer', 'Backend Developer', 'React Specialist'];
+  const skills = [
+    'Full‑Stack JavaScript Developer',
+    'Production React Specialist',
+    'Email & Web Experience Engineer',
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -217,7 +221,8 @@ const Hero = () => {
             <div className="w-16 h-1 bg-gray-900 mb-4 lg:mb-6 mx-auto"></div>
             
             <p className="text-gray-600 leading-relaxed text-center text-sm sm:text-base lg:text-sm xl:text-base px-0 lg:px-2">
-              Crafting elegant, high-performance web experiences with modern technologies.
+              Full‑stack developer shipping production features, dashboards, and high‑converting emailers
+              using the MERN stack and modern frontend tooling.
             </p>
 
             <div className="flex space-x-4 mt-6 lg:mt-8 justify-center">
@@ -255,34 +260,37 @@ const Hero = () => {
         >
           <div className="w-full max-w-3xl">
             <h2 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-bold text-gray-800 mb-6 lg:mb-8">
-              Experience &amp; Expertise
+              Experience & Expertise
             </h2>
 
             <div className="space-y-6 lg:space-y-8">
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-lg xl:text-xl font-semibold text-gray-800 mb-2">
-                  React Development
+                  Product &amp; Dashboard Development
                 </h3>
                 <p className="text-gray-600 text-sm sm:text-base lg:text-sm xl:text-base">
-                  Building modern, responsive web applications with React and Next.js. Focused on performance optimization and clean component architecture.
+                  Building and maintaining real‑world products like SkillSwap, Resume Sudhar, Referral Jugaad, and
+                  Green Basket with React, Node.js, MongoDB, and Tailwind CSS.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-lg xl:text-xl font-semibold text-gray-800 mb-2">
-                  UI/UX Design
+                  High‑Converting Emailers
                 </h3>
                 <p className="text-gray-600 text-sm sm:text-base lg:text-sm xl:text-base">
-                  Creating intuitive, user-centered designs that balance aesthetic appeal with functional usability.
+                  Designing and developing production HTML emailers (transactional and marketing) that render
+                  consistently across major email clients and support business campaigns.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-lg xl:text-xl font-semibold text-gray-800 mb-2">
-                  Frontend Architecture
+                  Clean Code &amp; Collaboration
                 </h3>
                 <p className="text-gray-600 text-sm sm:text-base lg:text-sm xl:text-base">
-                  Developing scalable frontend architectures with modern tooling, state management, and performance best practices.
+                  Writing clean, reusable components, collaborating through Git/GitHub, and working in agile teams
+                  with code reviews, CI, and incremental releases.
                 </p>
               </div>
             </div>

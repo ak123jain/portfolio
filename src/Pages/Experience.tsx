@@ -39,6 +39,7 @@ const Experience = () => {
         'Contributing as a Full Stack Developer on production-grade web applications used by real users.',
         'Developing and maintaining end-to-end features using React.js, Node.js, Express.js, and MongoDB.',
         'Building clean, responsive, and reusable UI components with React.js and Tailwind CSS.',
+        'Designing and coding responsive HTML emailers for transactional and marketing campaigns in production.',
         'Designing and implementing scalable RESTful APIs with secure authentication and authorization using JWT.',
         'Handling database schema design and optimizing MongoDB queries for performance and reliability.',
         'Integrating third-party services and internal APIs to support business workflows.',
