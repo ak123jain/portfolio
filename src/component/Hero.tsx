@@ -13,7 +13,7 @@ import {
   FileText,
 } from 'lucide-react';
 import akash from '../assets/WhatsApp Image 2026-02-02 at 1.53.30 PM.jpeg';
-import resume from '../assets/Akash_Resume.pdf';
+import resume from '../assets/akash resume.pdf';
 
 const Hero = () => {
   const [scrolled, setScrolled] = useState(false);
